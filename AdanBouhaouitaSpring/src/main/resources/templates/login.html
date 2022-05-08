@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<h5>
+			<strong>Login</strong>
+		</h5>
+
+		<div>
+			<form action="#" th:action="@{/logincheck}" method="post">
+
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				<input type="text" id="inputEmail" name="email" placeholder="Email" />
+				<input type="password" id="inputPassword" name="password" placeholder="Password" />
+				<input id="boton" type="submit" value="Sign in" />
+
+				<div>
+					<p>
+						Not a member? <a th:href="@{/gestionproductos/registro}">Register</a>
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="contenedor" th:if="${logout!=null OR error!=null}">
+		<div th:if="${error!=null}">Wrong user or password. Try Again.</div>
+	</div>
+	<div id="exito" th:if="${success!=null}" th:text="${success}" /></div>
+</body>
+</html>

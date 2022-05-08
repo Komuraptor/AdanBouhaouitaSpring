@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+	    <h5>
+	        <strong>Sign up</strong>
+	    </h5>
+	
+	    <div>
+	        <form action="#" th:action="@{/gestionproductos/addCuenta}" th:object="${cuenta}" method="post">
+	
+				<input type="text" th:field="*{email}" name="email" placeholder="Email">
+				<small th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</small>
+				<small th:if="${error==1}">Email not available</small>
+	
+				<input type="password" th:field="*{password}" name="password" placeholder="Password">
+				<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</small>
+	                    
+	            <input type="hidden" th:field="*{enabled}" th:value="1"/>
+	            
+<!-- 	            <input type="hidden" th:field="*{rol}" th:value="ROLE_USER"/> -->
+	
+				<select name="rol">
+					<option th:value="ROLE_ADMIN">Administrador</option>
+					<option th:value="ROLE_EQUIPO">Equipo</option>
+					<option th:value="ROLE_CICLISTA">Ciclista</option>
+					</select>
+				
+				<input type="submit" value="Registrar"/>
+	        </form>
+	        <a th:href="@{/gestionproductos/login}">
+	        	<input type="submit" value="Cancel">
+	        </a>
+	    </div>
+	</div>
+</body>
+</html>
