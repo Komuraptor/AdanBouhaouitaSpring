@@ -24,12 +24,12 @@ public class Mensajes {
 	@ManyToOne
 	@JoinColumn(name="id_emisor")
 	@OnDelete(action=OnDeleteAction.CASCADE)
-	private Usuarios id_emisor;
+	private Cuenta id_emisor;
 	
 	@ManyToOne
 	@JoinColumn(name="id_receptor")
 	@OnDelete(action=OnDeleteAction.CASCADE)
-	private Usuarios id_receptor;
+	private Cuenta id_receptor;
 	
 	@Column(name="mensaje", length=300)
 	private String mensaje;
@@ -38,7 +38,7 @@ public class Mensajes {
 		super();
 	}
 
-	public Mensajes(int id, Usuarios id_emisor, Usuarios id_receptor, String mensaje) {
+	public Mensajes(int id, Cuenta id_emisor, Cuenta id_receptor, String mensaje) {
 		super();
 		this.id = id;
 		this.id_emisor = id_emisor;
@@ -54,19 +54,19 @@ public class Mensajes {
 		this.id = id;
 	}
 
-	public Usuarios getId_emisor() {
+	public Cuenta getId_emisor() {
 		return id_emisor;
 	}
 
-	public void setId_emisor(Usuarios id_emisor) {
+	public void setId_emisor(Cuenta id_emisor) {
 		this.id_emisor = id_emisor;
 	}
 
-	public Usuarios getId_receptor() {
+	public Cuenta getId_receptor() {
 		return id_receptor;
 	}
 
-	public void setId_receptor(Usuarios id_receptor) {
+	public void setId_receptor(Cuenta id_receptor) {
 		this.id_receptor = id_receptor;
 	}
 

@@ -27,12 +27,12 @@ public class Transaccion {
 	@ManyToOne
 	@JoinColumn(name="id_comprador")
 	@OnDelete(action=OnDeleteAction.CASCADE)
-	private Usuarios id_comprador;
+	private Cuenta id_comprador;
 	
 	@ManyToOne
 	@JoinColumn(name="id_vendedor")
 	@OnDelete(action=OnDeleteAction.CASCADE)
-	private Usuarios id_vendedor;
+	private Cuenta id_vendedor;
 	
 	@OneToOne
 	@JoinColumn(name="id_venta")
@@ -46,7 +46,7 @@ public class Transaccion {
 		super();
 	}
 
-	public Transaccion(int id, Usuarios id_comprador, Usuarios id_vendedor, Vendidos id_venta, Date fech_venta) {
+	public Transaccion(int id, Cuenta id_comprador, Cuenta id_vendedor, Vendidos id_venta, Date fech_venta) {
 		super();
 		this.id = id;
 		this.id_comprador = id_comprador;
@@ -63,19 +63,19 @@ public class Transaccion {
 		this.id = id;
 	}
 
-	public Usuarios getId_comprador() {
+	public Cuenta getId_comprador() {
 		return id_comprador;
 	}
 
-	public void setId_comprador(Usuarios id_comprador) {
+	public void setId_comprador(Cuenta id_comprador) {
 		this.id_comprador = id_comprador;
 	}
 
-	public Usuarios getId_vendedor() {
+	public Cuenta getId_vendedor() {
 		return id_vendedor;
 	}
 
-	public void setId_vendedor(Usuarios id_vendedor) {
+	public void setId_vendedor(Cuenta id_vendedor) {
 		this.id_vendedor = id_vendedor;
 	}
 

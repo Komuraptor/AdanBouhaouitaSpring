@@ -4,9 +4,9 @@ public class MensajesModel {
 
 private int id;
 	
-	private UsuariosModel id_emisor;
+	private CuentaModel id_emisor;
 	
-	private UsuariosModel id_receptor;
+	private CuentaModel id_receptor;
 	
 	private String mensaje;
 
@@ -14,7 +14,7 @@ private int id;
 		super();
 	}
 
-	public MensajesModel(int id, UsuariosModel id_emisor, UsuariosModel id_receptor, String mensaje) {
+	public MensajesModel(int id, CuentaModel id_emisor, CuentaModel id_receptor, String mensaje) {
 		super();
 		this.id = id;
 		this.id_emisor = id_emisor;
@@ -30,19 +30,19 @@ private int id;
 		this.id = id;
 	}
 
-	public UsuariosModel getId_emisor() {
+	public CuentaModel getId_emisor() {
 		return id_emisor;
 	}
 
-	public void setId_emisor(UsuariosModel id_emisor) {
+	public void setId_emisor(CuentaModel id_emisor) {
 		this.id_emisor = id_emisor;
 	}
 
-	public UsuariosModel getId_receptor() {
+	public CuentaModel getId_receptor() {
 		return id_receptor;
 	}
 
-	public void setId_receptor(UsuariosModel id_receptor) {
+	public void setId_receptor(CuentaModel id_receptor) {
 		this.id_receptor = id_receptor;
 	}
 

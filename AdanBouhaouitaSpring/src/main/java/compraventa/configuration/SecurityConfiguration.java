@@ -28,12 +28,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/css/*", "/imagenes/*", "/pdf/*", "/gestionproductos/registro", "/gestionproductos/addCuenta")
+		http.authorizeRequests().antMatchers("/gestionproductos/registro", "/gestionproductos/addCuenta", "/gestionproductos/articulos")
 		.permitAll().anyRequest().authenticated().and()
 		.formLogin().loginPage("/gestionproductos/login")
 		.loginProcessingUrl("/logincheck").usernameParameter("email")
 		.passwordParameter("password").defaultSuccessUrl("/gestionproductos/loginsuccess").
 		permitAll().and().logout().logoutUrl("/logout").logoutSuccessUrl("/login?logout").permitAll();
+	
 	}
 
 }

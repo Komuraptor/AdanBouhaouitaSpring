@@ -6,13 +6,13 @@ public class VendidosModel {
 	
 	private ArticulosModel id_articulo;
 	
-	private UsuariosModel id_comprador;
+	private CuentaModel id_comprador;
 
 	public VendidosModel() {
 		super();
 	}
 
-	public VendidosModel(int id, ArticulosModel id_articulo, UsuariosModel id_comprador) {
+	public VendidosModel(int id, ArticulosModel id_articulo, CuentaModel id_comprador) {
 		super();
 		this.id = id;
 		this.id_articulo = id_articulo;
@@ -35,11 +35,11 @@ public class VendidosModel {
 		this.id_articulo = id_articulo;
 	}
 
-	public UsuariosModel getId_comprador() {
+	public CuentaModel getId_comprador() {
 		return id_comprador;
 	}
 
-	public void setId_comprador(UsuariosModel id_comprador) {
+	public void setId_comprador(CuentaModel id_comprador) {
 		this.id_comprador = id_comprador;
 	}
 	

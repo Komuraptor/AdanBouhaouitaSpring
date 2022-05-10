@@ -30,13 +30,13 @@ public class Vendidos {
 	@ManyToOne
 	@JoinColumn(name="id_comprador")
 	@OnDelete(action=OnDeleteAction.CASCADE)
-	private Usuarios id_comprador;
+	private Cuenta id_comprador;
 
 	public Vendidos() {
 		super();
 	}
 
-	public Vendidos(int id, Articulos id_articulo, Usuarios id_comprador) {
+	public Vendidos(int id, Articulos id_articulo, Cuenta id_comprador) {
 		super();
 		this.id = id;
 		this.id_articulo = id_articulo;
@@ -59,11 +59,11 @@ public class Vendidos {
 		this.id_articulo = id_articulo;
 	}
 
-	public Usuarios getId_comprador() {
+	public Cuenta getId_comprador() {
 		return id_comprador;
 	}
 
-	public void setId_comprador(Usuarios id_comprador) {
+	public void setId_comprador(Cuenta id_comprador) {
 		this.id_comprador = id_comprador;
 	}
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Articulos</title>
+
+	<link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"/>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+</head>
+<body>
+	<div style="background-color: #6ef0c0">
+		<div style="padding-left: 3%; padding-top: 1%; padding-bottom: 1%">
+			<a sec:authorize="hasRole('ROLE_USER')" th:href="@{/gestionproductos/login?logout}" onclick="return confirm('¿Cerrar sesión?');"><img src="/imagenes/assets/power.png"/></a>
+			<a sec:authorize="hasRole('ROLE_USER')" th:href="@{/gestionproductos/addArticulo?id=0}">Añadir</a>
+		</div>
+	</div>
+
+	<div th:each="articulo : ${articulos}" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); width: 25%; border-radius: 5px; ">
+	  <img th:src="${articulo.imagen}" style="width:100%; border-radius: 5px 5px 0 0;">
+	  <div style="padding: 2px 16px;">
+	    <h4><span th:text=${articulo.nombre}>Nombre</span> - <span th:text=${articulo.precio}>Precio</span></h4> 
+	    <p><span th:text=${articulo.descripcion}>Descripcion</span></p> 
+	  </div>
+	</div>
+
+
+	 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

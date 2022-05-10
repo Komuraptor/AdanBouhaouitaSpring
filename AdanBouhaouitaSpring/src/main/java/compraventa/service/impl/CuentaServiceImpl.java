@@ -2,6 +2,7 @@ package compraventa.service.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -75,11 +76,20 @@ public class CuentaServiceImpl implements UserDetailsService, CuentaService {
 
 	
 	public void save(CuentaModel cuentaModel) {
+		Date fech_alta = new Date();
 		Cuenta cuenta = new Cuenta();
 		cuenta.setEmail(cuentaModel.getEmail());
 		cuenta.setPassword(cuentaModel.getPassword());
 		cuenta.setListaRoles(new HashSet<>(rolUsuarioRepository.findAll()));
 		cuenta.setEnabled(true);
+		
+		cuenta.setDni(cuentaModel.getDni());
+		cuenta.setNombre(cuentaModel.getNombre());
+		cuenta.setApellidos(cuentaModel.getApellidos());
+		cuenta.setFech_nac(cuentaModel.getFech_nac());
+		cuenta.setFech_alta(fech_alta);
+		cuenta.setTelefono(cuentaModel.getTelefono());
+		cuenta.setSaldo(0);
 		cuentaRepository.save(cuenta);
 		
 		RolUsuario rol = new RolUsuario();

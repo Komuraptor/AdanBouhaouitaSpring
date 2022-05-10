@@ -6,9 +6,9 @@ public class TransaccionModel {
 
 	private int id;
 	
-	private UsuariosModel id_comprador;
+	private CuentaModel id_comprador;
 	
-	private UsuariosModel id_vendedor;
+	private CuentaModel id_vendedor;
 	
 	private VendidosModel id_venta;
 	
@@ -18,7 +18,7 @@ public class TransaccionModel {
 		super();
 	}
 
-	public TransaccionModel(int id, UsuariosModel id_comprador, UsuariosModel id_vendedor, VendidosModel id_venta, Date fech_venta) {
+	public TransaccionModel(int id, CuentaModel id_comprador, CuentaModel id_vendedor, VendidosModel id_venta, Date fech_venta) {
 		super();
 		this.id = id;
 		this.id_comprador = id_comprador;
@@ -35,19 +35,19 @@ public class TransaccionModel {
 		this.id = id;
 	}
 
-	public UsuariosModel getId_comprador() {
+	public CuentaModel getId_comprador() {
 		return id_comprador;
 	}
 
-	public void setId_comprador(UsuariosModel id_comprador) {
+	public void setId_comprador(CuentaModel id_comprador) {
 		this.id_comprador = id_comprador;
 	}
 
-	public UsuariosModel getId_vendedor() {
+	public CuentaModel getId_vendedor() {
 		return id_vendedor;
 	}
 
-	public void setId_vendedor(UsuariosModel id_vendedor) {
+	public void setId_vendedor(CuentaModel id_vendedor) {
 		this.id_vendedor = id_vendedor;
 	}
 
