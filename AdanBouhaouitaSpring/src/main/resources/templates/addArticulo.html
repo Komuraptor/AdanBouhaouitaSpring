@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Articulo</title>
+</head>
+<body>
+	<div style="background-color: #6ef0c0">
+		<form action="#" th:action="@{/gestionproductos/articulos}" style="padding-left: 3%">
+			<input type="submit" value="Atrás">
+		</form>
+		<a class="navbar-brand">Cuenta: <span th:text="${#authentication.getPrincipal().getUsername()}"></span></a>
+	</div>
+	
+	<div style="padding-top: 3%; padding-left: 20%; padding-right: 20%">
+		
+		<h5 style="background-color: #6ef0c0">
+			<strong>Añadir Articulo</strong>
+		</h5>
+		<div>
+			<form action="#" th:action="@{/gestionproductos/addArticulo}" th:object="${articulo}" enctype="multipart/form-data" method="post" style="padding: 20px">
+
+				<label>Nombre</label>
+				<input type="text" th:field="*{nombre}" th:value="${nombre}" class="form-control">
+				
+				<br>
+				
+				<label>Precio</label>
+				<input type="number" th:field="*{precio}" th:value="${precio}" class="form-control">
+				
+				<br>
+				
+				<label>Descripción</label>
+				<input type="text" th:field="*{descripcion}" th:value="${descripcion}" class="form-control"></input>
+				
+				<br>
+				
+				<label>Categoria</label>
+				<input type="text" th:field="*{categoria}" th:value="${categoria}" class="form-control">
+				
+				<br>
+				
+				<label>Imagen</label>
+				<input type="file" name="imagen"/>
+				
+				<br>
+				
+				<label>Email</label>
+				<input type="hidden" name="email" th:value="${#authentication.getPrincipal().getUsername()}" class="form-control">
+				
+				<input type="text" th:field="*{vendido}" th:value="0"/>
+				
+				
+
+				<br>
+				
+				<button type="submit">Add</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Registro</title>
 </head>
 <body>
-	<div>
+	<div style="max-width: 500px; margin: auto; padding-top: 10%">
 	    <h5>
 	        <strong>Sign up</strong>
 	    </h5>
@@ -13,23 +13,47 @@
 	    <div>
 	        <form action="#" th:action="@{/gestionproductos/addCuenta}" th:object="${cuenta}" method="post">
 	
+				<label>Email</label>
 				<input type="text" th:field="*{email}" name="email" placeholder="Email">
 				<small th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</small>
-				<small th:if="${error==1}">Email not available</small>
-	
+				<small th:if="${error==1}">Email no disponible</small>
+				
+				<br>
+				
+				<label>Password</label>
 				<input type="password" th:field="*{password}" name="password" placeholder="Password">
 				<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</small>
-	                    
-	            <input type="hidden" th:field="*{enabled}" th:value="1"/>
 	            
-<!-- 	            <input type="hidden" th:field="*{rol}" th:value="ROLE_USER"/> -->
-	
-				<select name="rol">
-					<option th:value="ROLE_ADMIN">Administrador</option>
-					<option th:value="ROLE_EQUIPO">Equipo</option>
-					<option th:value="ROLE_CICLISTA">Ciclista</option>
-					</select>
-				
+	            <br>
+	            
+	            <label>Dni</label>
+	            <input type="text" th:field="*{dni}" name="dni" placeholder="Dni">
+	            <small th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}">Dni error</small>
+	            
+	            <br>
+	            
+	            <label>Nombre</label>
+	            <input type="text" th:field="*{nombre}" name="nombre" placeholder="Nombre">
+	            
+	            <br>
+	            
+	            <label>Apellidos</label>
+	            <input type="text" th:field="*{apellidos}" name="apellidos" placeholder="Apellidos">
+	            
+	            <br>
+	            
+	            <label>Fecha de nacimiento</label>
+	            <input type="date" th:field="*{fech_nac}" name="fech_nac" placeholder="Fecha de Nacimiento">
+	            
+	            <br>
+	            
+	            <label>Teléfono</label>
+	            <input type="number" th:field="*{telefono}" name="telefono" placeholder="Telefono">
+	            
+	            <br>
+	            
+	            <input type="hidden" name="rol" th:value="ROLE_USER"/>
+		
 				<input type="submit" value="Registrar"/>
 	        </form>
 	        <a th:href="@{/gestionproductos/login}">

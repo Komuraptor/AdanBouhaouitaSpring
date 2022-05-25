@@ -41,21 +41,17 @@ public class RegistroController {
 	@PostMapping("/addCuenta")
 	public ModelAndView addCuenta(@ModelAttribute("cuenta") CuentaModel cuentaModel, Model model, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
-		System.out.println("Registro");
 		if(result.hasErrors() || cuentaService.compruebaCuenta(cuentaModel.getEmail())) {
-			
 			if(cuentaService.compruebaCuenta(cuentaModel.getEmail())) {
 				model.addAttribute("error", 1);
 			}
 			mav.setViewName(Constantes.REGISTRO_VIEW);
-			System.out.println("No registrado");
 		} else {
 			String pass_crypt = crypt.generaPass(cuentaModel.getPassword());
 			cuentaModel.setPassword(pass_crypt);
 			cuentaModel.setEnabled(true);
 			cuentaService.save(cuentaModel);
-			mav.setViewName("redirect://gestionproductos/login");
-			System.out.println("Registrado");
+			mav.setViewName("redirect:/gestionproductos/login");
 		}
 		return mav;
 	}

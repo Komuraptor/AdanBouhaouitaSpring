@@ -4,7 +4,7 @@ public class ArticulosModel {
 	
 	private int id;
 	
-	private UsuariosModel id_usuario;
+	private CuentaModel id_usuario;
 
 	private String nombre;
 	
@@ -22,7 +22,7 @@ public class ArticulosModel {
 		super();
 	}
 
-	public ArticulosModel(int id, UsuariosModel id_usuario, String nombre, String descripcion, int precio, String imagen, String categoria,
+	public ArticulosModel(int id, CuentaModel id_usuario, String nombre, String descripcion, int precio, String imagen, String categoria,
 			boolean vendido) {
 		super();
 		this.id = id;
@@ -43,11 +43,11 @@ public class ArticulosModel {
 		this.id = id;
 	}
 
-	public UsuariosModel getId_usuario() {
+	public CuentaModel getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(UsuariosModel id_usuario) {
+	public void setId_usuario(CuentaModel id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 
@@ -59,11 +59,11 @@ public class ArticulosModel {
 		this.nombre = nombre;
 	}
 
-	public String getdescripcion() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public void setdescripcion(String descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 

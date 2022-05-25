@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Login</title>
 </head>
 <body>
-	<div>
+	<div style="max-width: 500px; margin: auto; padding-top: 10%">
 		<h5>
 			<strong>Login</strong>
 		</h5>
@@ -16,19 +16,19 @@
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				<input type="text" id="inputEmail" name="email" placeholder="Email" />
 				<input type="password" id="inputPassword" name="password" placeholder="Password" />
-				<input id="boton" type="submit" value="Sign in" />
+				<input id="boton" type="submit" value="Iniciar sesión" />
 
-				<div>
+			</form>
+			<div>
 					<p>
-						Not a member? <a th:href="@{/gestionproductos/registro}">Register</a>
+						<a th:href="@{/gestionproductos/registro}">Registrate</a> | <a th:href="@{/gestionproductos/articulos}">Entrar sin cuenta</a>
 					</p>
 				</div>
-			</form>
 		</div>
 	</div>
 
 	<div id="contenedor" th:if="${logout!=null OR error!=null}">
-		<div th:if="${error!=null}">Wrong user or password. Try Again.</div>
+		<div th:if="${error!=null}">Fallo de identificación. Intentalo de nuevo.</div>
 	</div>
 	<div id="exito" th:if="${success!=null}" th:text="${success}" /></div>
 </body>

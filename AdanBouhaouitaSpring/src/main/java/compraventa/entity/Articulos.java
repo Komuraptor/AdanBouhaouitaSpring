@@ -24,7 +24,7 @@ public class Articulos {
 	@ManyToOne
 	@JoinColumn(name="id_usuario")
 	@OnDelete(action=OnDeleteAction.CASCADE)
-	private Usuarios id_usuario;
+	private Cuenta id_usuario;
 
 	@Column(name="nombre", length=50)
 	private String nombre;
@@ -48,7 +48,7 @@ public class Articulos {
 		super();
 	}
 
-	public Articulos(int id, Usuarios id_usuario, String nombre, String descripcion, int precio, String imagen, String categoria,
+	public Articulos(int id, Cuenta id_usuario, String nombre, String descripcion, int precio, String imagen, String categoria,
 			boolean vendido) {
 		super();
 		this.id = id;
@@ -69,11 +69,11 @@ public class Articulos {
 		this.id = id;
 	}
 
-	public Usuarios getId_usuario() {
+	public Cuenta getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(Usuarios id_usuario) {
+	public void setId_usuario(Cuenta id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 
